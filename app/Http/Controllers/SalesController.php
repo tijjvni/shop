@@ -15,7 +15,7 @@ class SalesController extends Controller
         return view('sales');
     }
 
-    public function view(Sale $sale){
+    public function view($sale){
         dd($sale);
     }
 }
