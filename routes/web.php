@@ -13,10 +13,25 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
-Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
-    return view('dashboard');
-})->name('dashboard');
+Route::middleware(['auth:sanctum', 'verified'])->group(function () {
+
+    Route::get('/', function () {
+        return view('dashboard');
+    })->name('dashboard');
+
+    Route::prefix('sales')->name('sales.')->group(function () {
+        Route::get('/', [SalesController::class, 'index'])->name('index');
+    });
+    Route::prefix('products')->name('products.')->group(function () {
+        Route::get('/', [ProductController::class, 'index'])->name('index');
+    });
+
+    Route::get('/admin', function () {
+        return view('admin');
+    })->name('admin');
+    
+});
