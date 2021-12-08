@@ -2,6 +2,10 @@
 
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers\SalesController;
+use App\Http\Controllers\ProductsController;
+use App\Http\Controllers\AdminController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -27,10 +31,9 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
         Route::get('/', [SalesController::class, 'index'])->name('index');
     });
     Route::prefix('products')->name('products.')->group(function () {
-        Route::get('/', [ProductController::class, 'index'])->name('index');
+        Route::get('/', [ProductsController::class, 'index'])->name('index');
     });
-    Route::get('admin', function () {
-        return view('admin');
-    })->name('admin');
+
+    Route::get('admin', [AdminController::class, 'index'])->name('admin');
     
 });
