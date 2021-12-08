@@ -26,6 +26,7 @@
     </div>
 
     <div class="p-6 border-t border-gray-200 md:border-t-0 md:border-l">
+
         <div class="flex items-center">
             <i class="fa fa-cube w-8 h-8 text-gray-400"></i>
             <div class="ml-4 text-lg text-gray-600 leading-7 font-semibold">
@@ -55,6 +56,8 @@
             </div>
         </div>
     </div>
+    
+    <div class="p-6 border-t border-gray-200">
 
         <div class="flex items-center">
             <i class="fa fa-money w-8 h-8 text-gray-400"></i>
