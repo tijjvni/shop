@@ -14,6 +14,13 @@ class Sales extends Migration
     public function up()
     {
         //
+        Schema::create('sales', function (Blueprint $table) {
+            $table->id();
+            $table->integer('amount');
+            $table->foreignId('user')->nullable();
+            $table->timestamps();
+        });
+
     }
 
     /**
@@ -24,5 +31,7 @@ class Sales extends Migration
     public function down()
     {
         //
+        Schema::dropIfExists('sales');
+
     }
 }
