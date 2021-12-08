@@ -11,9 +11,17 @@ class SalesProducts extends Migration
      *
      * @return void
      */
+        //
+    
     public function up()
     {
-        //
+        Schema::create('sales_products', function (Blueprint $table) {
+            $table->id();
+            $table->integer('qty');
+            $table->foreignId('sale_id')->nullable();
+            $table->foreignId('product_id')->nullable();
+        });
+
     }
 
     /**
@@ -24,5 +32,7 @@ class SalesProducts extends Migration
     public function down()
     {
         //
+        Schema::dropIfExists('sales_products');
+
     }
 }

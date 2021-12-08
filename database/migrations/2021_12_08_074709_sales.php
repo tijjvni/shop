@@ -17,7 +17,7 @@ class Sales extends Migration
         Schema::create('sales', function (Blueprint $table) {
             $table->id();
             $table->integer('amount');
-            $table->foreignId('user')->nullable();
+            $table->foreignId('user_id')->nullable();
             $table->timestamps();
         });
 
