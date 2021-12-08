@@ -8,7 +8,6 @@ class Sales extends Component
 {
     public function render()
     {
-        return view('livewire.sales')
-        ->layout('layouts.app');        
+        return view('livewire.sales');        
     }
 }
