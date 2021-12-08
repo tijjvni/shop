@@ -10,6 +10,14 @@ class Product extends Model
     use HasFactory;
 
     /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function category()
+    {
+        return $this->hasMany('App\Models\Category');
+    }
+
+    /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
     public function sales()
