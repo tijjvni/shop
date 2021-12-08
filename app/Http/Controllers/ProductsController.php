@@ -10,6 +10,6 @@ class ProductsController extends Controller
 {
     //
     public function index(){
-        return Products::class;
+        return view('livewire.products');
     }
 }

@@ -10,6 +10,6 @@ class SalesController extends Controller
 {
     //
     public function index(){
-        return Sales::class;
+        return view('livewire.sales');
     }
 }
