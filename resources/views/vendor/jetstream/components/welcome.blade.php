@@ -16,12 +16,10 @@
                 <a href="/sales">Sales</a>
             </div>
         </div>
-
         <div class="ml-12">
             <div class="mt-2 text-sm text-gray-500">
                 View and manage sales                
             </div>
-
         </div>
     </div>
 
@@ -38,7 +36,6 @@
             <div class="mt-2 text-sm text-gray-500">
                 View and manage products                
             </div>
-
         </div>
     </div>
 
