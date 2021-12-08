@@ -29,8 +29,7 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
     Route::prefix('products')->name('products.')->group(function () {
         Route::get('/', [ProductController::class, 'index'])->name('index');
     });
-
-    Route::get('/admin', function () {
+    Route::get('admin', function () {
         return view('admin');
     })->name('admin');
     
