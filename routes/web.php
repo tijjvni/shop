@@ -29,6 +29,8 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
 
     Route::prefix('sales')->name('sales.')->group(function () {
         Route::get('/', [SalesController::class, 'index'])->name('index');
+        Route::get('/{sale}', [SalesController::class, 'view'])->name('view');
+
     });
     Route::prefix('products')->name('products.')->group(function () {
         Route::get('/', [ProductsController::class, 'index'])->name('index');
