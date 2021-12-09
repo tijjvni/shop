@@ -9,6 +9,7 @@ class Category extends Model
 {
     use HasFactory;
 
+    protected $timestamps = false;
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
