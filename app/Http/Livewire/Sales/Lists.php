@@ -10,7 +10,7 @@ class Lists extends Component
 {
     public function render()
     {
-        $sales = Sale::all();
+        $sales = Sale::get();
 
         return view('livewire.sales.lists', [
             'sales' => $sales

@@ -20,7 +20,7 @@ class CategoriesCreate extends Component
 	        'name' => 'required|min:3',
 	    ]);
 
-        $category = new Product;
+        $category = new Category;
         $category->name = $this->name;
 
         $category->save();
