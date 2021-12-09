@@ -27,7 +27,7 @@ class CategoriesCreate extends Component
         $category->save();
 
         $request->session()->flash('banner', 'Category added successfully.');        
-        return redirect()->refresh();        
+        return redirect()->to('/admin');        
     }
 
     public function render()
