@@ -16,7 +16,7 @@ class CategoriesCreate extends Component
 
     }
 
-    public function createCategory(Request $request){
+    public function createCategory(){
 		$this->validate([
 	        'name' => 'required|min:3',
 	    ]);
@@ -25,8 +25,8 @@ class CategoriesCreate extends Component
         $category->name = $this->name;
 
         $category->save();
-
-        $request->session()->flash('banner', 'Category added successfully.');        
+        
+	    request()->session()->flash('banner', 'Category added successfully.');  
         return redirect()->to('/admin');        
     }
 
