@@ -10,7 +10,7 @@ class CategoriesLists extends Component
 {
     public function render()
     {
-        $categories = Category::with('products')->all();
+        $categories = Category::with('products')->get();
 
         return view('livewire.products.categories-lists',[
             'categories' => $categories 
