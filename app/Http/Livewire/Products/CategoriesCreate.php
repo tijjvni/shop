@@ -4,6 +4,7 @@ namespace App\Http\Livewire\Products;
 
 use Livewire\Component;
 
+use Illuminate\Http\Request;
 use App\Models\Category;
 
 class CategoriesCreate extends Component
@@ -15,7 +16,7 @@ class CategoriesCreate extends Component
 
     }
 
-    public function createCategory(){
+    public function createCategory(Request $request){
 		$this->validate([
 	        'name' => 'required|min:3',
 	    ]);
@@ -25,8 +26,8 @@ class CategoriesCreate extends Component
 
         $category->save();
 
-        session()->flash('banner', 'Category added successfully.');        
-        return redirect()->refresh();        
+        $request->session()->flash('banner', 'Category added successfully.');        
+        return $request->redirect()->refresh();        
     }
 
     public function render()
