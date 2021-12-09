@@ -4,6 +4,7 @@ namespace App\Http\Livewire\Products;
 
 use Livewire\Component;
 
+use App\Models\Category;
 use App\Models\Product;
 
 class Create extends Component
@@ -23,10 +24,9 @@ class Create extends Component
     public function createProduct(){
 		$this->validate([
 	        'name' => 'required|min:3',
-	        'category' => 'required|numeric',
+	        'category' => 'required|exists:products,id',
 	        'description' => 'required',
 	        'msl' => 'required|numeric',
-	        'qty' => 'required|numeric',
 	        'price' => 'required|numeric',
 	    ]);
 
@@ -35,17 +35,20 @@ class Create extends Component
         $product->category_id = $this->category;
         $product->description = $this->description;
         $product->msl = $this->msl;
-        $product->qty = $this->qty;
+        $product->qty = 0;
         $product->price = $this->price;
 
         $product->save();
 
-        request()->session()->flash('banner', 'Product added successfully.');      
-        return redirect()->to(url()->full());     
+	    request()->session()->flash('flash.banner', 'Product added successfully.');  
+        return redirect()->to('/products');   
     }
 
     public function render()
     {
-        return view('livewire.products.create');
+        $categories = Category::get();
+        return view('livewire.products.create',[
+            'categories' => $categories
+        ]);
     }
 }
