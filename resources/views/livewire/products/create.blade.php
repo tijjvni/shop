@@ -1,5 +1,5 @@
 <div>
-    <x-jet-form-section submit="makeSale">
+    <x-jet-form-section submit="createProduct">
         <x-slot name="title">
             {{ __('Create Product') }}
         </x-slot>
