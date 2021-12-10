@@ -18,6 +18,7 @@ class Update extends Component
 
     public function mount(Product $id){
         $this->product = $id;
+        dd($this->product);
         $this->name = $this->product->name;
         $this->price = $this->product->price;
         $this->qty = $this->product->qty;
