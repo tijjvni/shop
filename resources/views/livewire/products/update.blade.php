@@ -17,9 +17,9 @@
             </div> 	
     
             <div class="w-full space-y-2 col-span-6 space-y-1">
-                <x-jet-label for="price" value="{{ __('Description') }}"/>
-                <x-jet-input id="price" class="block w-full" type="text" placeholder="Product price" wire:model.defer="price"/>
-                <x-jet-input-error for="price" />
+                <x-jet-label for="qty" value="{{ __('Quantity') }}"/>
+                <x-jet-input id="qty" class="block w-full" type="text" placeholder="Product price" wire:model.defer="qty"/>
+                <x-jet-input-error for="qty" />
             </div> 	
 
             <div class="w-full space-y-2 col-span-6 space-y-1">

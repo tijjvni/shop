@@ -14,7 +14,7 @@
             <tr @if($loop->even)class="bg-grey"@endif>
                 <td class="border px-4 py-2">{{ ($loop->index + 1) }}</td>
                 <td class="border px-4 py-2">
-                    <p>{{ $product->name }}</p>
+                    <a href="/products/{{$product->id}}">{{ $product->name }}</a>
                     <p>{{ $product->description }}</p>
                 </td>
                 <td class="border px-4 py-2">N{{ number_format($product->price) }}</td>
