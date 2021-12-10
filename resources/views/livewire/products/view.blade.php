@@ -6,22 +6,22 @@
         </tr>
         </thead>
         <tbody>
-            <tr @if($loop->even)class="bg-grey"@endif>
+            <tr class="bg-grey">
                 <td class="border px-4 py-2">Name</td>
                 <td class="border px-4 py-2">{{ $product->name }}</td>
             </tr>
             
-            <tr @if($loop->even)class="bg-grey"@endif>
+            <tr >
                 <td class="border px-4 py-2">Qty</td>
                 <td class="border px-4 py-2">{{ $product->qty }}</td>
             </tr>
             
-            <tr @if($loop->even)class="bg-grey"@endif>
+            <tr class="bg-grey">
                 <td class="border px-4 py-2">Price</td>
                 <td class="border px-4 py-2">{{ $product->price }}</td>
             </tr>
             
-            <tr @if($loop->even)class="bg-grey"@endif>
+            <tr >
                 <td class="border px-4 py-2">Msl</td>
                 <td class="border px-4 py-2">{{ $product->msl }}</td>
             </tr>
