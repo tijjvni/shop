@@ -12,7 +12,7 @@
         <tbody>
         @forelse ($products as $product)
             <tr @if($loop->even)class="bg-grey"@endif>
-                <td class="border px-4 py-2">{{ $loop->index }}</td>
+                <td class="border px-4 py-2">{{ ($loop->index + 1) }}</td>
                 <td class="border px-4 py-2">
                     <p>{{ $product->name }}</p>
                     <p>{{ $product->description }}</p>

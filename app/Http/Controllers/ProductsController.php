@@ -15,7 +15,13 @@ class ProductsController extends Controller
     //
     public function view($id){
         return view('products',[
-            'id' => $id
+            'view' => $id
+        ]);
+    }
+    //
+    public function update($id){
+        return view('products',[
+            'update' => $id
         ]);
     }
 }
