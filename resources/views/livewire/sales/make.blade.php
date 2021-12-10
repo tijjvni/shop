@@ -14,7 +14,7 @@
                 <div class="w-full space-y-2 col-span-6 space-y-1">
                     <x-jet-label for="product" value="{{ __('Product') }}"/>
                     <select class="block w-full" id="product" wire:model.defer="product">
-                        <option>Select category</option>
+                        <option>Select product</option>
                         @foreach($products as $product)
                             <option value="{{ $product->id }}">{{ $product->name }}</option>
                         @endforeach

@@ -1,5 +1,5 @@
 <div>
-<table class="table-auto w-full">
+    <table class="table-auto w-full">
         <thead>
         <tr>
             <th class="px-4 py-2">S/N</th>
