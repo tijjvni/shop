@@ -19,7 +19,7 @@ class Make extends Component
 
     public function makeSale(){
 		$this->validate([
-            'product' => 'required|exists:products,id',
+            'product' => 'required',
             'quantity' => 'required|numeric',
 	    ]);
 
@@ -36,12 +36,19 @@ class Make extends Component
 
         $sale->products()->save($saleProduct);
 
+        $product = Product::find($this->product);
+        $product->qty = ($product->qty - $this->qty);
+        $product->save();
+
         request()->session()->flash('banner', 'Sale added successfully.');        
-        return redirect()->to(url()->full());        
+        return redirect()->to('/sales');        
     }
 
     public function render()
     {
-        return view('livewire.sales.make');
+        $products = Product::get();
+        return view('livewire.sales.make',[
+            'products' => $products
+        ]);
     }
 }

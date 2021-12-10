@@ -10,13 +10,21 @@
 
         <x-slot name="form">     
             <div class="w-full space-y-2 col-span-6 rounded">
-                <div class="flex-grow space-y-1">
+        
+                <div class="w-full space-y-2 col-span-6 space-y-1">
                     <x-jet-label for="product" value="{{ __('Product') }}"/>
-                    <x-jet-input id="product" class="block w-full" type="text" placeholder="Select product" />
-                </div>
+                    <select class="block w-full" id="product" wire:model.defer="product">
+                        <option>Select category</option>
+                        @foreach($products as $product)
+                            <option value="{{ $product->id }}">{{ $product->name }}</option>
+                        @endforeach
+                    </select>
+                    <x-jet-input-error for="product" />
+                </div> 	                
                 <div class="flex-initial space-y-1">
                     <x-jet-label for="qty" value="{{ __('Qty') }}"/>
-                    <x-jet-input id="qty" class="block w-full" type="number" placeholder="Qty" />
+                    <x-jet-input id="qty" class="block w-full" type="number" placeholder="Qty" wire:model.defer="qty"/>
+                    <x-jet-input-error for="qty" />
                 </div>
             </div> 	
         </x-slot>
