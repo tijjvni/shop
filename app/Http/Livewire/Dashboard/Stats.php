@@ -13,7 +13,7 @@ class Stats extends Component
     {
         $products = Product::get()->count();
         $sales = Sale::sum('amount');
-        $stock = Product::where('msl','>','qty')->get()->count(); 
+        $stock = Product::whereColumn('msl','>','qty')->get()->count(); 
 
         return view('livewire.dashboard.stats',[
             'products' => $products,
