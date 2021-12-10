@@ -28,7 +28,6 @@ class Update extends Component
 		$this->validate([
 	        'name' => 'required|min:3',
 	        'qty' => 'required',
-	        'description' => '',
 	        'msl' => 'required|numeric',
 	        'price' => 'required|numeric',
 	    ]);
