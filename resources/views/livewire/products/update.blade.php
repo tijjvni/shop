@@ -31,7 +31,8 @@
                 <x-jet-label for="msl" value="{{ __('Minimum Stock Level') }}"/>
                 <x-jet-input id="msl" class="block w-full" type="text" placeholder="Product msl" wire:model.defer="msl"/>
                 <x-jet-input-error for="msl" />
-            </div> 	                        
+            </div> 	             
+            <input type="hidden" wire:model="{{$product_id}}"/>           
         </x-slot>
             
         <x-slot name="actions">

@@ -15,10 +15,11 @@ class Update extends Component
     public $price;
     public $qty;
     public $msl;
+    public $product_id;
 
     public function mount(Product $id){
         $this->product = $id;
-        dd($this->product);
+        $this->product_id = $this->product->id;
         $this->name = $this->product->name;
         $this->price = $this->product->price;
         $this->qty = $this->product->qty;
@@ -27,13 +28,14 @@ class Update extends Component
 
     public function updateProduct(){
 		$this->validate([
+	        'product_id' => 'required',
 	        'name' => 'required|min:3',
 	        'qty' => 'required',
 	        'msl' => 'required|numeric',
 	        'price' => 'required|numeric',
 	    ]);
 
-        $product = Product::find($this->product->id);
+        $product = Product::find($this->product_id);
         $product->name = $this->name;
         // $product->category_id = $this->category;
         // $product->description = $this->description;
