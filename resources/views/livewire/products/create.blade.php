@@ -27,7 +27,7 @@
                 <select class="block w-full" id="category" wire:model.defer="category">
                     <option>Select category</option>
                     @foreach($categories as $category)
-                        <option>{{ $category->name }}</option>
+                        <option value="{{ $category->id }}">{{ $category->name }}</option>
                     @endforeach
                 </select>
                 <x-jet-input-error for="category" />
