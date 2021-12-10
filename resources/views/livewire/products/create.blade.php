@@ -17,6 +17,17 @@
             </div> 	
         </x-slot>
 
+        <div class="w-full space-y-2 col-span-6 space-y-1">
+                <x-jet-label for="category" value="{{ __('Category') }}"/>
+                <select class="block w-full" id="category" wire:model.defer="category">
+                    <option>Select category</option>
+                    @foreach($categories as $category)
+                        <option>{{ $category->name }}</option>
+                    @endforeach
+                </select>
+                <x-jet-input-error for="category" />
+            </div> 	
+            
         <x-slot name="actions">
             <x-jet-action-message class="mr-3" on="saved">
                 {{ __('Saved.') }}
