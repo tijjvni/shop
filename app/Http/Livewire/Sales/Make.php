@@ -11,7 +11,7 @@ use App\Models\SaleProduct;
 class Make extends Component
 {
     public $product;
-    public $quantity;
+    public $qty;
 
     public function mount(){
 
@@ -20,7 +20,7 @@ class Make extends Component
     public function makeSale(){
 		$this->validate([
             'product' => 'required',
-            'quantity' => 'required|numeric',
+            'qty' => 'required|numeric',
 	    ]);
 
         $sale = new Sale;
