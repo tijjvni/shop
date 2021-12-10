@@ -24,7 +24,7 @@ class Create extends Component
     public function createProduct(){
 		$this->validate([
 	        'name' => 'required|min:3',
-	        'category' => 'required|exists:categories,id',
+	        'category' => 'required',
 	        'description' => '',
 	        'msl' => 'required|numeric',
 	        'price' => 'required|numeric',
