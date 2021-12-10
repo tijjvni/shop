@@ -10,7 +10,7 @@
         </tr>
         </thead>
         <tbody>
-        @foreach ($products as $product)
+        @forelse ($products as $product)
             <tr @if($loop->even)class="bg-grey"@endif>
                 <td class="border px-4 py-2">{{ $lood->index }}</td>
                 <td class="border px-4 py-2">
@@ -21,7 +21,11 @@
                 <td class="border px-4 py-2">{{ $product->msl }}</td>
                 <td class="border px-4 py-2">{{ $product->qty }}</td>
             </tr>
-        @endforeach
+        @empty
+            <tr>
+                <td class="border px-4 py-2 text-center text-gray-400" colspan="5">List is empty</td>
+            </tr>
+        @endforelse
         </tbody>
     </table>
 </div>
