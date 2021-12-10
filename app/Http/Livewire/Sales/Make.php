@@ -23,24 +23,32 @@ class Make extends Component
             'qty' => 'required|numeric',
 	    ]);
 
-        $sale = new Sale;
-        $sale->user = auth()->id();
-        $sale->amount = ($this->qty * Product::find($this->product)->price);
-
-        $sale->save();
-
-        $saleProduct = new SaleProduct;
-        $saleProduct->sale = $sale->id;
-        $saleProduct->sale = $this->product;
-        $saleProduct->sale = $this->qty;
-
-        $sale->products()->save($saleProduct);
-
         $product = Product::find($this->product);
-        $product->qty = ($product->qty - $this->qty);
-        $product->save();
 
-        request()->session()->flash('banner', 'Sale added successfully.');        
+        if($product->qty >= $this->qty){
+            
+            $sale = new Sale;
+            $sale->user = auth()->id();
+            $sale->amount = ($this->qty * Product::find($this->product)->price);
+    
+            $sale->save();
+    
+            $saleProduct = new SaleProduct;
+            $saleProduct->sale = $sale->id;
+            $saleProduct->sale = $this->product;
+            $saleProduct->sale = $this->qty;
+    
+            $sale->products()->save($saleProduct);
+    
+            $product->qty = ($product->qty - $this->qty);
+            $product->save();
+            request()->session()->flash('flash.banner', 'Sale added successfully.');        
+        
+        }else {
+            request()->session()->flash('flash.banner', 'Not enough quantity in stock.');        
+            request()->session()->flash('flash.bannerStyle', 'danger');        
+        }
+                
         return redirect()->to('/sales');        
     }
 
