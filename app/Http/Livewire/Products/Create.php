@@ -33,7 +33,7 @@ class Create extends Component
         $product = new Product;
         $product->name = $this->name;
         $product->category_id = $this->category;
-        $product->description = $this->description;
+        // $product->description = $this->description;
         $product->msl = $this->msl;
         $product->qty = 0;
         $product->price = $this->price;

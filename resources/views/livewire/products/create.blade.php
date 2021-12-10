@@ -16,11 +16,11 @@
                 <x-jet-input-error for="name" />
             </div> 	
     
-            <div class="w-full space-y-2 col-span-6 space-y-1">
+            <!-- <div class="w-full space-y-2 col-span-6 space-y-1">
                 <x-jet-label for="description" value="{{ __('Description') }}"/>
                 <x-jet-input id="description" class="block w-full" type="text" placeholder="Product name" wire:model.defer="description"/>
                 <x-jet-input-error for="description" />
-            </div> 	
+            </div> 	 -->
 
             <div class="w-full space-y-2 col-span-6 space-y-1">
                 <x-jet-label for="category" value="{{ __('Category') }}"/>
