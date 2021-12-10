@@ -4,6 +4,13 @@
         <tr>
             <th class="px-4 py-2" colspan="2">Product Info</th>
         </tr>
+        <tr>
+            <th class="px-4 py-2" colspan="2">
+                <a href="/products/{{$product->id}}/update">
+                    <x-jet-button>update</x-jet-button>
+                </a>
+            </th>
+        </tr>
         </thead>
         <tbody>
             <tr class="bg-grey">
