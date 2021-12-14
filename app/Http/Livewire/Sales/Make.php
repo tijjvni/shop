@@ -28,7 +28,7 @@ class Make extends Component
         if($product->qty >= $this->qty){
             
             $sale = new Sale;
-            $sale->user = auth()->id();
+            $sale->user_id = auth()->id();
             $sale->amount = ($this->qty * Product::find($this->product)->price);
     
             $sale->save();
