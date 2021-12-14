@@ -16,7 +16,7 @@
                     <p>{{ count($sale->products) }}</p>
                 </td>
                 <td class="border px-4 py-2">N{{ number_format($sale->amount) }}</td>
-                <td class="border px-4 py-2">{{ $sale-created_at->diffForHumans() }}</td>
+                <td class="border px-4 py-2">{{ $sale->created_at->diffForHumans() }}</td>
             </tr>
         @empty
             <tr>
