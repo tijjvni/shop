@@ -20,7 +20,7 @@ class Make extends Component
     public function makeSale(){
 		$this->validate([
             'product' => 'required',
-            'qty' => 'required|numeric',
+            'qty' => 'required|numeric|digits_between:1,10',
 	    ]);
 
         $product = Product::find($this->product);

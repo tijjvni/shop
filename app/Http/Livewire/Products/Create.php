@@ -26,8 +26,8 @@ class Create extends Component
 	        'name' => 'required|min:3',
 	        'category' => 'required',
 	        'description' => '',
-	        'msl' => 'required|numeric',
-	        'price' => 'required|numeric',
+	        'msl' => 'required|numeric|digits_between:1,10',
+	        'price' => 'required|numeric|digits_between:1,10',
 	    ]);
 
         $product = new Product;
