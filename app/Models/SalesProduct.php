@@ -9,6 +9,7 @@ class SalesProduct extends Model
 {
     use HasFactory;
 
+    public $timestamps = false;
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
