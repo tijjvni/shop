@@ -6,7 +6,7 @@ use Livewire\Component;
 
 use App\Models\Sale;
 use App\Models\Product;
-use App\Models\SaleProduct;
+use App\Models\SalesProduct;
 
 class Make extends Component
 {
@@ -33,7 +33,7 @@ class Make extends Component
     
             $sale->save();
     
-            $saleProduct = new SaleProduct;
+            $saleProduct = new SalesProduct;
             $saleProduct->sale = $sale->id;
             $saleProduct->sale = $this->product;
             $saleProduct->sale = $this->qty;

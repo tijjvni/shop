@@ -41,7 +41,7 @@
 
     <div class="p-6 border-t border-gray-200">
         <div class="flex items-center">
-            <i class="fa fa-user-friends w-8 h-8 text-gray-400"></i>
+            <i class="fa fa-user-edit w-8 h-8 text-gray-400"></i>
             <div class="ml-4 text-lg text-gray-600 leading-7 font-semibold">
                 <a href="/admin">Admin</a>
             </div>
