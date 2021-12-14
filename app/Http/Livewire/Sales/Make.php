@@ -33,12 +33,15 @@ class Make extends Component
     
             $sale->save();
     
-            $saleProduct = new SalesProduct;
-            $saleProduct->sale_id = $sale->id;
-            $saleProduct->product_id = $this->product;
-            $saleProduct->qty = $this->qty;
+
+            for($x=0;$x<$this->qty;$x++){
+                $saleProduct = new SalesProduct;
+                $saleProduct->sale_id = $sale->id;
+                $saleProduct->product_id = $this->product;
+                $saleProduct->qty = 1;
+                $sale->products()->save($saleProduct);
+            }
     
-            $sale->products()->save($saleProduct);
     
             $product->qty = ($product->qty - $this->qty);
             $product->save();
