@@ -5,6 +5,7 @@
             <th class="px-4 py-2">S/N</th>
             <th class="px-4 py-2">Products</th>
             <th class="px-4 py-2">Amount</th>
+            <th class="px-4 py-2">Time</th>
         </tr>
         </thead>
         <tbody>
@@ -15,10 +16,11 @@
                     <p>{{ count($sale->products) }}</p>
                 </td>
                 <td class="border px-4 py-2">N{{ number_format($sale->amount) }}</td>
+                <td class="border px-4 py-2">{{ $sale-created_at->diffForHumans() }}</td>
             </tr>
         @empty
             <tr>
-                <td class="border px-4 py-2 text-center text-gray-400" colspan="3">List is empty</td>
+                <td class="border px-4 py-2 text-center text-gray-400" colspan="4">List is empty</td>
             </tr>
         @endforelse
         </tbody>
