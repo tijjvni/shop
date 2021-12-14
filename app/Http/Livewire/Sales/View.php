@@ -10,16 +10,15 @@ class View extends Component
 {
 
     protected $view;
-    public function mount(Product $id){
+    public function mount(Sale $id){
         $this->view = $id;
     }
-
 
 
     public function render()
     {
         return view('livewire.sales.view',[
-            'product' => $this->view
+            'sale' => $this->view
         ]);
     }
 }

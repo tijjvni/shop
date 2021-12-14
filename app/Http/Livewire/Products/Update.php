@@ -46,7 +46,7 @@ class Update extends Component
         $product->save();
 
 	    request()->session()->flash('flash.banner', 'Product updated successfully.');  
-        return redirect()->to('/products/'.$this->product->id);   
+        return redirect()->to('/products/'.$product->id);   
     }
 
     public function render()

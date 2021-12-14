@@ -23,7 +23,7 @@
                 </div> 	                
                 <div class="flex-initial space-y-1">
                     <x-jet-label for="qty" value="{{ __('Qty') }}"/>
-                    <x-jet-input id="qty" class="block w-full" type="number" placeholder="Qty" wire:model.defer="qty"/>
+                    <x-jet-input id="qty" min="1" required placeholder="1" class="block w-full" type="number" placeholder="Qty" wire:model.defer="qty"/>
                     <x-jet-input-error for="qty" />
                 </div>
             </div> 	

@@ -8,23 +8,23 @@
         </thead>
         <tbody>
             <tr class="bg-grey">
-                <td class="border px-4 py-2">Name</td>
-                <td class="border px-4 py-2">{{ $product->name }}</td>
+                <td class="border px-4 py-2">Sale ID</td>
+                <td class="border px-4 py-2">{{ $sale->id }}</td>
             </tr>
             
             <tr >
-                <td class="border px-4 py-2">Qty</td>
-                <td class="border px-4 py-2">{{ $product->qty }}</td>
+                <td class="border px-4 py-2">Amount</td>
+                <td class="border px-4 py-2">N{{ number_format($sale->amount) }}</td>
             </tr>
             
             <tr class="bg-grey">
-                <td class="border px-4 py-2">Price</td>
-                <td class="border px-4 py-2">{{ $product->price }}</td>
+                <td class="border px-4 py-2">Time</td>
+                <td class="border px-4 py-2">{{ $sale->created_at->diffForHumans(); }}</td>
             </tr>
             
             <tr >
-                <td class="border px-4 py-2">Msl</td>
-                <td class="border px-4 py-2">{{ $product->msl }}</td>
+                <td class="border px-4 py-2">Salesperson</td>
+                <td class="border px-4 py-2">{{ $sale->user->name }}</td>
             </tr>
             
         </tbody>
