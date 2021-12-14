@@ -31,8 +31,8 @@ class Update extends Component
 	        'product_id' => 'required',
 	        'name' => 'required|min:3',
 	        'qty' => 'required',
-	        'msl' => 'required|numeric|digits_between:1,10',
-	        'price' => 'required|numeric|digits_between:1,10',
+	        'msl' => 'required|numeric||gt:0',
+	        'price' => 'required|numeric|gt:0',
 	    ]);
 
         $product = Product::find($this->product_id);
